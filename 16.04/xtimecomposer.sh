@@ -1,9 +1,13 @@
 #!/bin/bash
 
 # Download, extract and fix xtimecomposer 14.1.2 for use
+# Working nicely
+
+# Install dependancies
+sudo apt-get install -y gcc-multilib libncurses5:i386
 
 # Download xTimeComposer 14.1.2
-sh gdrive_download.sh 14EcqJrnv3dF_hrNFbaICwz_t3YsCTzSh xTIMEcomposer-Community_14-Linux64-Installer_Community_14.1.2.tgz
+sh ../gdrive_download.sh 14EcqJrnv3dF_hrNFbaICwz_t3YsCTzSh xTIMEcomposer-Community_14-Linux64-Installer_Community_14.1.2.tgz
 
 # Extract
 tar xvzf xTIMEcomposer-Community_14-Linux64-Installer_Community_14.1.2.tgz -C $HOME
@@ -13,3 +17,6 @@ cp $HOME/XMOS/xTIMEcomposer/Community_14.1.2/bin/xtimecomposer $HOME/XMOS/xTIMEc
 sed '144s/.*/#&/' $HOME/XMOS/xTIMEcomposer/Community_14.1.2/bin/xtimecomposer > $HOME/XMOS/xTIMEcomposer/Community_14.1.2/bin/xtimecomposer_edit
 mv $HOME/XMOS/xTIMEcomposer/Community_14.1.2/bin/xtimecomposer_edit $HOME/XMOS/xTIMEcomposer/Community_14.1.2/bin/xtimecomposer
 chmod +x $HOME/XMOS/xTIMEcomposer/Community_14.1.2/bin/xtimecomposer
+
+# Remove downloaded file
+rm xTIMEcomposer-Community_14-Linux64-Installer_Community_14.1.2.tgz
