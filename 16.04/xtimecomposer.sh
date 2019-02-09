@@ -6,7 +6,7 @@
 # Install dependancies
 sudo apt-get install -y gcc-multilib libncurses5:i386
 
-# Download xTimeComposer 14.1.2
+# Download
 sh ../gdrive_download.sh 14EcqJrnv3dF_hrNFbaICwz_t3YsCTzSh xTIMEcomposer-Community_14-Linux64-Installer_Community_14.1.2.tgz
 
 # Extract
