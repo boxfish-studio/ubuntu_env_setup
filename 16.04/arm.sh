@@ -1,13 +1,9 @@
 #!/bin/bash
 
-#install xpm (xpacks package manager)
-#https://www.npmjs.com/package/xpm
+#http://marksolters.com/programming/2016/06/22/arm-toolchain-16-04.html
 
-mkdir -p "${HOME}"/opt/npm
-npm config set prefix "${HOME}"/opt/npm
-echo 'export PATH="${HOME}"/opt/npm/bin:${PATH}' >> "${HOME}"/.profile
-source "${HOME}"/.profile
+sudo apt-get remove gcc-arm-none-eabi binutils binutils-arm-none-eabi gdb-arm-none-eabi libnewlib-arm-none-eabi 
+sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa
+sudo apt-get update
+sudo apt-get install gcc-arm-embedded
 
-xpm install --global @gnu-mcu-eclipse/arm-none-eabi-gcc
-
-sudo apt-get install -y gcc-arm-none-eabi
